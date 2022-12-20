@@ -1,0 +1,15 @@
+datalist {
+  display: flex;
+  justify-content: space-between;
+  /* writing-mode: vertical-lr; */
+  width: 200px;
+}
+
+option {
+  padding: 0;
+}
+
+input[type="range"] {
+  width: 200px;
+  margin: 0;
+}
