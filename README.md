@@ -8,7 +8,7 @@ MVP a place to sell/give away used books
 
 ## Tech used
 
-MongoDB databse, mongoose, cloudinary, EJS, Node + Express, Tailwind.
+MongoDB databse, mongoose, cloudinary, EJS, Node + Express, tailwind, multer, passport.
 
 ## Things to improve
 
