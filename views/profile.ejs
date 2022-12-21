@@ -5,7 +5,7 @@
           <div>
               <p><strong>User Name</strong>: <%= user.userName %></p>
               <p><strong>Email</strong>: <%= user.email %></p>
-              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+              <a href="/logout" class="inline-block rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700">Logout</a>
           </div>
           <div class="mt-5">
             <h2>Add a post</h2>
@@ -15,6 +15,7 @@
                   <input type="text" class="form-control" id="title" name="title">
               </div>
               <div class="mb-3">
+                <label for="range">Condition: </label><br>
                 <input name="range" type="range" min="0" max="5" list="tickmarks"/>
                 <datalist id="tickmarks">
                   <option value="0" label='0'></option>
@@ -28,7 +29,7 @@
 
               <div class="mb-3">
                 <label for="price">Price: USD $</label>
-                <input id="price" type="number" name="price" max="10" min="0" />
+                <input id="price" type="number" name="price" max="10" min="0" class="form-control col-3"/>
               </div>
 
               <div class="mb-3">
@@ -39,13 +40,13 @@
                 <label for="imgUpload" class="form-label">Image</label>
                 <input type="file" class="form-control" id="imageUpload" name="file">
               </div>
-              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+              <button type="submit" class="inline-block rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700" value="Upload">Submit</button>
             </form>
           </div>
       </div>
       <div class="col-6">
         <ul class="row list-unstyled">
-        <% for(var i=0; i<posts.length; i++) {%>
+        <% for(let i=0; i<posts.length; i++) {%>
           <li class="col-6 justify-content-between mt-5">
             <a href="/post/<%= posts[i]._id%>">
               <img class="img-fluid" src="<%= posts[i].image%>">
@@ -54,7 +55,7 @@
         <% } %>
         </ul>
         <div class="row justify-content-center mt-5">
-          <a class="btn btn-primary" href="/feed">Return to Feed</a>
+          <a class="inline-block rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700 text-center" href="/feed">Return to Feed</a>
         </div>  
       </div>  
     </div>

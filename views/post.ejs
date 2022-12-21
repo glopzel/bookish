@@ -1,12 +1,12 @@
 <%- include('partials/header') -%>
 <div class="container">
   <div class="flex justify-around">
-   
+
     <div class="card col-3 p-2 flex-1 mr-2">
       <img src="<%= post.image%>" class="card-img-top" alt="">
       <div class="card-body">
-        <h2 class="card-title font-bold book-title"><%= post.title %></h2>
-        <p class="card-text"><%= post.caption %></p>
+        <h2 class="card-title font-bold book-title text-xl"><%= post.title %></h2>
+        <p class="card-text text-xl mb-2"><%= post.caption %></p>
         <p>Condition: <%= post.condition %>/5</p>
         <p>Price: USD $<%= post.price %></p>
 
@@ -23,23 +23,23 @@
     </div>
     
     <div class="flex-1 mt-4">
-      <h2>Add a comment</h2>
+      <h2 class="text-xl font-bold">Add a comment</h2>
       <form action="/comment/createComment/<%=post._id%>" method="POST">
         <div class="mb-3">
-            <label for="comment" class="form-label">Comment</label>
+            <label for="comment" class="form-label">Comment:</label>
             <input type="text" class="form-control" id="comment" name="comment">
         </div>
-        <button type="submit" class="btn btn-primary bg-sky-500 border border-sky-500">Submit</button>
+        <button type="submit" class="btn btn-primary bg-sky-500 border border-sky-500">Add Comment</button>
       </form>
+
+      <ul>
+        <% for(let i=0; i<comments.length; i++) {%>
+          <li class="flex flex-col list-none border my-2 p-2">
+            <%= comments[i].comment%>
+          </li>
+        <% } %>
+      </ul>
     </div>
-    <ul>
-      <% for(let i=0; i<comments.length; i++) {%>
-        <li class="col-6 justify-content-between mt-5">
-          <%= comments[i].comment%>
-        </li>
-      <% } %>
-    </ul>
-    
   </div>
 
   <footer class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 mt-4 sm:px-6">
